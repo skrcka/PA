@@ -40,3 +40,57 @@ pnbinom(3, 3, 0.87) - pnbinom(0, 3, 0.87)
 ppr = pbinom(229, 250, 0.9, FALSE)
 ppo = pbinom(214, 250, 0.9, FALSE)
 ppr / ppo
+
+# pravdepodobnost ze se poroucha za 2 mesice nejvyse 1 stroj
+# X~Po(^t=4)
+ppois(1,4)
+
+# stredni pocet porouchanych stroju za rok
+# 12 * 2 = 24
+
+# pocet mikroorganizmu v 10ml vzorku
+# zobecnit
+x = 0:40
+y = dpois(x, 20)
+plot(x,y)
+
+# jaka je pravdepodobnost ze v 10ml je vie nez 14 organizmu
+ppois(14,20,F)
+
+# Nahodna velicina popisujici delku tehotenstvi ve dnech ma stredni hodnotu 266 dnu a odchylku 16
+# Nacrtnete graf hustoty
+# X~N(\mu=266, \omega^2 = 16^2)
+# 3 sigma aby vetsina prvku byla na grafu
+x = seq(266 - 3*16, 266 + 3*16, 0.01)
+y = dnorm(x, 266, 16)
+plot(x,y)
+
+# P(X <= 246)
+pnorm(246, 266, 16)
+
+# P(250 < X < 282)
+pnorm(282, 266, 16) - pnorm(250, 266, 16, T)
+
+# Jaka delka tehotenstvi je prekrocena u maximalne 10 % zen
+qnorm(0.9, 266, 16)
+
+# Urcete horni a dolni kvartil
+qnorm(0.25, 266, 16)
+qnorm(0.75, 266, 16)
+
+# Uvazujte nahodnout velicinu popisujici delku remise onk pacientu
+# stredni hodnota je 1 rok
+# \lambda = 1/1 = 1
+x = seq(0, 4, 0.01)
+y = pexp(x)
+plot(x, y)
+
+# Urcete median nahodne veliciny
+qexp(0.5)
+
+# Rychlost vetru na W rozdeleni tvar 2 a meritko 7
+x = seq(0, 10, 0.01)
+y = pweibull(x, 2, 7)
+plot(x, y)
+
+pweibull(10, 2, 7) - pweibull(4, 2, 7)
