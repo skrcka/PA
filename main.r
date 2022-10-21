@@ -94,3 +94,32 @@ y = pweibull(x, 2, 7)
 plot(x, y)
 
 pweibull(10, 2, 7) - pweibull(4, 2, 7)
+
+
+### Ukol 3
+## 1
+# A
+
+# Poas, lambda=12
+
+#B
+ppois(9,12, F)
+
+#C
+ppois(13, 12, F) / ppois(10, 12, F)
+
+## 2
+# A
+x = seq(0, 2000, 0.1)
+y = pexp(x, 1/800)
+plot(x, y)
+
+x = seq(0, 2000, 0.1)
+y = dexp(x, 1/800)
+plot(x, y)
+
+# B
+pexp(900, 1/800, F)
+
+#C
+qexp(0.75, 1/800)
