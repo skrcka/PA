@@ -82,6 +82,7 @@ sd(data1$odehrane_hod_2018)
 
 library(EnvStats)
 Int_odhad = varTest(data1$odehrane_hod_2018, alternative = "two.sided", conf.level = 0.9)
+Int_odhad
 
 # Odmocnění pro získání int. odhadu sm. odchylky (funkce dá int. odhad rozptylu)
 sqrt(Int_odhad$conf.int)
